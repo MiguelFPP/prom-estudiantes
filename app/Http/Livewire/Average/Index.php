@@ -19,7 +19,9 @@ class Index extends Component
 
     public function render()
     {
-        $averages = Average::select('id', 'student', 'partial1', 'partial2', 'partial3', 'final')->get();
+        $averages = Average::select('id', 'student', 'partial1', 'partial2', 'partial3', 'final')
+            ->orderBy('id', 'desc')
+            ->get();
         return view('livewire.average.index', compact('averages'));
     }
 }
