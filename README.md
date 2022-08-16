@@ -1,5 +1,7 @@
 # Averages Students
 
+Livewire is used [Official Documentation](https://laravel-livewire.com/docs/2.x/quickstart), [Repository](https://github.com/livewire/livewire)
+
 ## Installation
 
 Please check the official laravel installation guide for server requirements before you start. [Official Documentation](https://laravel.com/docs/9.x)
