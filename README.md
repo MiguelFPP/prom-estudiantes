@@ -1,4 +1,4 @@
-# Blog
+# Averages Students
 
 ## Installation
 
