@@ -1,13 +1,13 @@
 <div>
     <div class="card">
         <div class="card-header d-flex justify-content-between">
-            <h4 class="card-title">Nuevo Estudiante</h4>
+            <h4 class="card-title">Editar Estudiante</h4>
             <a href="{{ route('students.index') }}" class="btn btn-primary">
                 Volver
             </a>
         </div>
         <div class="card-body">
-            <form action="" wire:submit.prevent='store'>
+            <form action="" wire:submit.prevent='update'>
                 <div class="form-group mb-2">
                     <label for="identification">Identificacion</label>
                     <input type="number" class="form-control" id="identification" name="identification"
@@ -46,7 +46,7 @@
                         </div>
                     </div>
                     <div wire:loading.class='visually-hidden' wire:target='store'>
-                        Guardar
+                        Actualizar
                     </div>
                 </button>
             </form>
