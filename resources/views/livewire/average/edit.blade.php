@@ -18,7 +18,7 @@
                     <label for="student">Nombre Estudiante</label>
                     <div wire:ignore>
                         <select id="student" class="form-control select2" wire:model="student">
-                            <option value="0" selected>Seleccione un Estudiante</option>
+                            <option value="" selected>Seleccione un Estudiante</option>
                             @foreach ($students as $student)
                                 <option value="{{ $student->id }}">{{ $student->identification }} |
                                     {{ $student->name }}

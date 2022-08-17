@@ -4,9 +4,11 @@ namespace App\Http\Livewire\Average;
 
 use App\Models\Average;
 use Livewire\Component;
+use Livewire\WithPagination;
 
 class Index extends Component
 {
+    use WithPagination;
 
     protected $listeners = [
         'delete' => 'delete',
@@ -21,7 +23,7 @@ class Index extends Component
     {
         $averages=Average::with('student')
         ->orderBy('id', 'desc')
-        ->get();
+        ->paginate(5);
         return view('livewire.average.index', compact('averages'));
     }
 }

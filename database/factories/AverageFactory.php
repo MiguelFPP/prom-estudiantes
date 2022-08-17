@@ -26,7 +26,7 @@ class AverageFactory extends Factory
             'partial2' => $partial2,
             'partial3' => $partial3,
             'final' => $final,
-            'student_id' => $this->faker->numberBetween(1, 5),
+            'student_id' => $this->faker->numberBetween(1, 10),
         ];
     }
 }

@@ -13,6 +13,7 @@
             </a>
         </div>
         <div class="card-body">
+            <input type="text" wire:model="search" class="form-control" placeholder="Buscar...">
             @if ($students->isEmpty())
                 <div class="text-center d-block"></div>
                 <p class="text-danger">No hay estudiantes registrados.</p>
@@ -36,8 +37,7 @@
                                             class="btn btn-danger btn-sm">
                                             Eliminar
                                         </button>
-                                        <a href="{{ route('students.edit', $student) }}"
-                                            class="btn btn-warning btn-sm">
+                                        <a href="{{ route('students.edit', $student) }}" class="btn btn-warning btn-sm">
                                             Editar
                                         </a>
                                     </td>
@@ -45,6 +45,10 @@
                             @endforeach
                         </tbody>
                     </table>
+                </div>
+                {{-- paginate --}}
+                <div class="mt-2">
+                    {!! $students->withQueryString()->links('pagination::bootstrap-5') !!}
                 </div>
             @endif
         </div>
