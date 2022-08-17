@@ -50,8 +50,8 @@
                         </tbody>
                     </table>
                 </div>
-                <div class="mt-2">
-                    {!! $averages->withQueryString()->links('pagination::bootstrap-5') !!}
+                <div class="mt-2 d-flex justify-content-center">
+                    {!! $averages->links() !!}
                 </div>
             @endif
         </div>

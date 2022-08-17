@@ -9,6 +9,7 @@ use Livewire\WithPagination;
 class Index extends Component
 {
     use WithPagination;
+    protected $paginationTheme = 'bootstrap';
 
     protected $listeners = [
         'delete' => 'delete',
@@ -21,9 +22,9 @@ class Index extends Component
 
     public function render()
     {
-        $averages=Average::with('student')
-        ->orderBy('id', 'desc')
-        ->paginate(5);
+        $averages = Average::with('student')
+            ->orderBy('id', 'desc')
+            ->paginate(5);
         return view('livewire.average.index', compact('averages'));
     }
 }

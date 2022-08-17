@@ -67,6 +67,12 @@ class Edit extends Component
         return redirect()->route('average.index')->with('success', 'Promedio actualizado con éxito');
     }
 
+    public function calculateFinal()
+    {
+        $average = ($this->partial1 + $this->partial2 + $this->partial3) / 3;
+        $this->final = round($average, 1);
+    }
+
     public function render()
     {
         return view('livewire.average.edit');

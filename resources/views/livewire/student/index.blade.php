@@ -47,8 +47,8 @@
                     </table>
                 </div>
                 {{-- paginate --}}
-                <div class="mt-2">
-                    {!! $students->withQueryString()->links('pagination::bootstrap-5') !!}
+                <div class="mt-2 d-flex justify-content-center">
+                    {!! $students->links() !!}
                 </div>
             @endif
         </div>
