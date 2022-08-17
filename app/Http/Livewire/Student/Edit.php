@@ -25,8 +25,8 @@ class Edit extends Component
     {
         return [
             'identification' => 'required|numeric|unique:students,identification,' . $this->student_id,
-            'name' => 'required|alpha|max:255',
-            'surname' => 'required|alpha|max:255',
+            'name' => 'required|max:255|regex:/^[\pL\s\-]+$/u',
+            'surname' => 'required|max:255|regex:/^[\pL\s\-]+$/u',
         ];
     }
 

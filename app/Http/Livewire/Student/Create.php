@@ -13,8 +13,8 @@ class Create extends Component
 
     protected $rules=[
         'identification' => 'required|numeric|unique:students,identification',
-        'name' => 'required|alpha|max:255',
-        'surname' => 'required|alpha|max:255',
+        'name' => 'required|max:255|regex:/^[\pL\s\-]+$/u',
+        'surname' => 'required|max:255|regex:/^[\pL\s\-]+$/u',
     ];
 
     protected $validationAttributes=[
