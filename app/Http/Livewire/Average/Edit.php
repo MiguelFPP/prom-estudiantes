@@ -64,7 +64,7 @@ class Edit extends Component
             'partial3' => $this->partial3,
             'final' => $this->final,
         ]);
-        return redirect()->route('average.index')->with('success', 'Promedio actualizado con éxito');
+        return redirect()->route('averages.index')->with('success', 'Promedio actualizado con éxito');
     }
 
     public function calculateFinal()
