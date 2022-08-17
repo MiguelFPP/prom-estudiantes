@@ -41,6 +41,10 @@
                                             class="btn btn-danger btn-sm">
                                             Eliminar
                                         </button>
+                                        <a href="{{ route('averages.edit', $average) }}"
+                                            class="btn btn-warning btn-sm">
+                                            Editar
+                                        </a>
                                     </td>
                                 </tr>
                             @endforeach

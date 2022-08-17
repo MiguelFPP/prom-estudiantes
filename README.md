@@ -9,10 +9,7 @@ Please check the official laravel installation guide for server requirements bef
 Install all the dependencies using composer
 
     composer install   
-    
-Install all the dependencies using npm
 
-    npm install
 
 Copy the example env file and make the required configuration changes in the .env file
 

@@ -19,7 +19,6 @@ class Index extends Component
 
     public function render()
     {
-        /* average with student */
         $averages=Average::with('student')
         ->orderBy('id', 'desc')
         ->get();

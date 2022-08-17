@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [AverageController::class, 'index'])->name('averages.index');
 Route::get('/averages/create', [AverageController::class, 'create'])->name('averages.create');
+Route::get('/averages/edit/{average}', [AverageController::class, 'edit'])->name('averages.edit');
 
 /* students */
 Route::get('/students', [StudentController::class, 'index'])->name('students.index');
