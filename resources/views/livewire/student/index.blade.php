@@ -1,5 +1,4 @@
 <div>
-
     @if (session('success'))
         <div class="alert alert-success" role="alert">
             {{ session('success') }}
@@ -8,36 +7,32 @@
 
     <div class="card">
         <div class="card-header d-flex justify-content-between">
-            <h4 class="card-title">Notas Promedio</h4>
-            <a href="{{ route('averages.create') }}" class="btn btn-primary">
+            <h4 class="card-title">Estudiantes</h4>
+            <a href="{{ route('students.create') }}" class="btn btn-primary">
                 Nuevo
             </a>
         </div>
         <div class="card-body">
-            @if ($averages->isEmpty())
+            @if ($students->isEmpty())
                 <div class="text-center d-block"></div>
-                <p class="text-danger">No hay notas promedio registradas.</p>
+                <p class="text-danger">No hay estudiantes registrados.</p>
             @else
                 <div class="table-responsive">
                     <table class="table">
                         <thead class=" text-primary">
+                            <th>Identificacon</th>
                             <th>Nombre</th>
-                            <th>Parcial 1</th>
-                            <th>Parcial 2</th>
-                            <th>Parcial 3</th>
-                            <th>Final 3</th>
+                            <th>Apellidos</th>
                             <th>Acciones</th>
                         </thead>
                         <tbody>
-                            @foreach ($averages as $average)
+                            @foreach ($students as $student)
                                 <tr>
-                                    <td>{{ $average->student->name }} {{ $average->student->surname }} </td>
-                                    <td>{{ $average->partial1 }}</td>
-                                    <td>{{ $average->partial2 }}</td>
-                                    <td>{{ $average->partial3 }}</td>
-                                    <td>{{ $average->final }}</td>
+                                    <td>{{ $student->identification }}</td>
+                                    <td>{{ $student->name }}</td>
+                                    <td>{{ $student->surname }}</td>
                                     <td>
-                                        <button wire:click="$emit('deleteAverage', {{ $average->id }})"
+                                        <button wire:click="$emit('deleteAverage', {{ $student->id }})"
                                             class="btn btn-danger btn-sm">
                                             Eliminar
                                         </button>
@@ -50,7 +45,6 @@
             @endif
         </div>
     </div>
-
 </div>
 
 @push('scripts')

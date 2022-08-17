@@ -16,4 +16,9 @@ class Average extends Model
         'partial3',
         'final',
     ];
+
+    public function student()
+    {
+        return $this->belongsTo(Student::class);
+    }
 }

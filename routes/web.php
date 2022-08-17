@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AverageController;
+use App\Http\Controllers\StudentController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +17,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [AverageController::class, 'index'])->name('averages.index');
 Route::get('/averages/create', [AverageController::class, 'create'])->name('averages.create');
+
+/* students */
+Route::get('/students', [StudentController::class, 'index'])->name('students.index');
+Route::get('/students/create', [StudentController::class, 'create'])->name('students.create');

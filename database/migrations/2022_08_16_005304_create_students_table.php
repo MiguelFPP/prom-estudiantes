@@ -13,17 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('averages', function (Blueprint $table) {
+        Schema::create('students', function (Blueprint $table) {
             $table->id();
-            $table->float('partial1', 2, 1);
-            $table->float('partial2', 2, 1);
-            $table->float('partial3', 2, 1);
-            $table->float('final', 2, 1);
-
-            $table->foreignId('student_id')
-                ->constrained()
-                ->onDelete('cascade');
-
+            $table->string('identification')->unique();
+            $table->string('name');
+            $table->string('surname');
             $table->timestamps();
         });
     }
@@ -35,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('averages');
+        Schema::dropIfExists('students');
     }
 };
