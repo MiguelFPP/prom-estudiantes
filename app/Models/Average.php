@@ -10,11 +10,11 @@ class Average extends Model
     use HasFactory;
 
     protected $fillable = [
-        'student',
         'partial1',
         'partial2',
         'partial3',
         'final',
+        'student_id',
     ];
 
     public function student()
