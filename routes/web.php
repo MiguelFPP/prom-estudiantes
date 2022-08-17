@@ -21,3 +21,4 @@ Route::get('/averages/create', [AverageController::class, 'create'])->name('aver
 /* students */
 Route::get('/students', [StudentController::class, 'index'])->name('students.index');
 Route::get('/students/create', [StudentController::class, 'create'])->name('students.create');
+Route::get('/students/edit/{student}', [StudentController::class, 'edit'])->name('students.edit');

@@ -32,10 +32,14 @@
                                     <td>{{ $student->name }}</td>
                                     <td>{{ $student->surname }}</td>
                                     <td>
-                                        <button wire:click="$emit('deleteAverage', {{ $student->id }})"
+                                        <button wire:click="$emit('deleteStudent', {{ $student->id }})"
                                             class="btn btn-danger btn-sm">
                                             Eliminar
                                         </button>
+                                        <a href="{{ route('students.edit', $student) }}"
+                                            class="btn btn-warning btn-sm">
+                                            Editar
+                                        </a>
                                     </td>
                                 </tr>
                             @endforeach
@@ -50,7 +54,7 @@
 @push('scripts')
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
-        Livewire.on('deleteAverage', (id) => {
+        Livewire.on('deleteStudent', (id) => {
             Swal.fire({
                 title: 'Estas Seguro?',
                 text: "No podra revertir esto!",
@@ -62,11 +66,10 @@
                 cancelButtonText: 'Cancelar'
             }).then((result) => {
                 if (result.isConfirmed) {
-                    /* aliminar vacante */
                     Livewire.emit('delete', id)
                     Swal.fire(
                         'Eliminada!',
-                        'El promedio ha sido eliminado.',
+                        'El estudiante ha sido eliminado.',
                         'success'
                     )
                 }

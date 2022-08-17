@@ -7,6 +7,16 @@ use Livewire\Component;
 
 class Index extends Component
 {
+
+    protected $listeners = [
+        'delete' => 'delete',
+    ];
+
+    public function delete(int $id)
+    {
+        Student::find($id)->delete();
+    }
+
     public function render()
     {
         $students = Student::select('id', 'identification', 'name', 'surname')
